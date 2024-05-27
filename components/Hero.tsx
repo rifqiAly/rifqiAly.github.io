@@ -1,7 +1,6 @@
 'use client';
 import React from 'react'
 import Image from "next/image";
-import animationData from '../public/lotties/world-transfer.json'
 
 import CustomButton from './CustomButton'
 
