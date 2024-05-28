@@ -29,6 +29,7 @@ const Hero = () => {
                 <div className="hero__image">
                     <Image
                         src='/hero.png'
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         alt='hero'
                         fill
                         className="object-contain"

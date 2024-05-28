@@ -1,9 +1,9 @@
 'use client'
 import { Input } from "@nextui-org/react";
-import React from "react";
+import { useState } from "react";
 
 const SearchBar = () => {
-    const [value, setValue] = React.useState("");
+    const [value, setValue] = useState("");
 
     const handleSearch = () => {
 

@@ -6,9 +6,13 @@ import Owned from "./Owned";
 import Rewards from "./Rewards";
 
 const Section = () => {
+    const [selected, setSelected] = React.useState("catalogues");
+
     return (
         <div className="mt-12 padding-x padding-y max-width" id="discover">
             <Tabs aria-label="Options"
+                selectedKey={selected}
+                onSelectionChange={(key: any) => setSelected(key)}
                 color="primary">
                 <Tab key="catalogues" title="Catalogues">
                     <Catalogues />
@@ -20,7 +24,7 @@ const Section = () => {
                     <Rewards />
                 </Tab>
             </Tabs>
-           
+
         </div>
     )
 }

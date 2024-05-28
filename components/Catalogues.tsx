@@ -1,7 +1,7 @@
 'use client'
-import React from 'react'
 import { SearchBar, CustomFilter } from '@/components'
 import { Card, CardBody } from '@nextui-org/react'
+
 const Catalogues = () => {
     return (
         <Card>
