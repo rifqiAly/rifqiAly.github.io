@@ -18,7 +18,9 @@ export default function RootLayout({
     <html lang="en" className="light">
       <body className='relative'>
         <Navbar />
-        {children}
+        <Providers>
+          {children}
+        </Providers>
         <Footer />
       </body>
     </html>
