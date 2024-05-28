@@ -6,6 +6,8 @@ import Section from './Section'
 import SearchBar from './SearchBar'
 import CustomFilter from './CustomFilter'
 import ArtiCard from './ArtiCard'
+import ArtiDetails from './ArtiDetails'
+
 
 
 
@@ -18,4 +20,5 @@ export {
     SearchBar,
     CustomFilter,
     ArtiCard,
+    ArtiDetails
 }

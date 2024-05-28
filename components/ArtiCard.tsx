@@ -1,13 +1,11 @@
 "use client";
 import { anyProps } from "@/types";
 import { useState } from "react";
-import Image from "next/image";
 import utils from "@/utils";
 import CustomButton from "./CustomButton";
+import ArtiDetails from "./ArtiDetails";
 
 const ArtiCard = ({ data }: anyProps) => {
-  // const picArr = data.media[0]["media-metadata"];
-  // const pic = picArr[picArr.length - 1].url;
 
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -45,6 +43,12 @@ const ArtiCard = ({ data }: anyProps) => {
           handleClick={() => setIsOpen(true)}
         />
       </div>
+
+      <ArtiDetails
+        open={isOpen}
+        closeModal={() => setIsOpen(false)}
+        data={data}
+      />
     </div>
   );
 };
