@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Footer, Navbar } from "@/components";
 
 
 export const metadata: Metadata = {
-  title: "News",
+  title: "Delos News",
   description: "Get the best Article!",
 };
 
@@ -14,7 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className='relative'>{children}</body>
+      <body className='relative'>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
