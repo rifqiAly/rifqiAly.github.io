@@ -7,18 +7,21 @@ import Rewards from "./Rewards";
 
 const Section = () => {
     return (
-        <Tabs aria-label="Options"
-            color="secondary">
-            <Tab key="catalogues" title="Catalogues">
-                <Catalogues />
-            </Tab>
-            <Tab key="owned" title="Owned">
-                <Owned />
-            </Tab>
-            <Tab key="rewards" title="Rewards">
-                <Rewards />
-            </Tab>
-        </Tabs>
+        <div className="mt-12 padding-x padding-y
+      max-width" id="discover">
+            <Tabs aria-label="Options"
+                color="primary">
+                <Tab key="catalogues" title="Catalogues">
+                    <Catalogues />
+                </Tab>
+                <Tab key="owned" title="Owned">
+                    <Owned />
+                </Tab>
+                <Tab key="rewards" title="Rewards">
+                    <Rewards />
+                </Tab>
+            </Tabs>
+        </div>
     )
 }
 

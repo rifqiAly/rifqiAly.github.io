@@ -7,10 +7,7 @@ export default function Home() {
     <main className="overflow-hidden">
       <Hero />
 
-      <div className="mt-12 padding-x padding-y
-      max-width" id="discover">
-        <Section />
-      </div>
+      <Section />
     </main>
   );
 }
