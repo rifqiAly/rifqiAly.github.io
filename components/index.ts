@@ -5,6 +5,8 @@ import Footer from './Footer'
 import Section from './Section'
 import SearchBar from './SearchBar'
 import CustomFilter from './CustomFilter'
+import ArtiCard from './ArtiCard'
+
 
 
 export {
@@ -15,4 +17,5 @@ export {
     Section,
     SearchBar,
     CustomFilter,
+    ArtiCard,
 }
