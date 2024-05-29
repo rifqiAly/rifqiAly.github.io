@@ -1220,8 +1220,10 @@ const getData = async (param: any) => {
   //     eta_id: 0,
   //   },
   // ];
-  let arr = await getNYT("1", "emailed");
-  if (param.hasOwnProperty("period") && param.hasOwnProperty("type")) {
+  let arr = []
+  if(!param.period || !param.type){
+    arr = await getNYT("1", "emailed");
+  }else {
     arr = await getNYT(param.period, param.type);
   }
 
