@@ -44,6 +44,9 @@ const ArtiCard = ({ data }: anyProps) => {
         />
       </div>
 
+      {
+        
+      }
       <ArtiDetails
         open={isOpen}
         closeModal={() => setIsOpen(false)}

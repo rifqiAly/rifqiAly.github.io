@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 const SearchBar = () => {
   const router = useRouter();
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

@@ -3,9 +3,8 @@ import utils from "@/utils";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-export default async function Home({searchParams}) {
-  // const data = await utils.getEmailed('1');
-  let data = utils.demoData(searchParams.search);
+export default async function Home({ searchParams }: any) {
+  let data: any = await utils.getData(searchParams);
   const isDataEmpty = !Array.isArray(data) || data.length < 1 || !data;
 
   return (

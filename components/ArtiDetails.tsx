@@ -19,9 +19,6 @@ interface Details {
 }
 
 const ArtiDetails = ({ open, closeModal, data }: Details) => {
-  const picArr = data.media[0]["media-metadata"];
-  const alt = data.media[0].caption;
-  const pic = picArr[picArr.length - 1];
   return (
     <Modal
       backdrop={"blur"}
@@ -40,15 +37,29 @@ const ArtiDetails = ({ open, closeModal, data }: Details) => {
             <ModalBody>
               <Divider />
               <div className="flex flex-row justify-between items-center">
-                <span className="text-[12px]">{utils.formatPublish(data.published_date)}</span>
+                <span className="text-[12px]">
+                  {utils.formatPublish(data.published_date)}
+                </span>
                 <span className="text-[12px]">{data.byline}</span>
               </div>
               <Image
-                src={pic.url}
-                alt={alt}
+                src={
+                  data.media[0]["media-metadata"][
+                    data.media[0]["media-metadata"].length - 1
+                  ].url
+                }
+                alt={data.media[0].caption}
                 priority
-                width={pic.width}
-                height={pic.height}
+                width={
+                  data.media[0]["media-metadata"][
+                    data.media[0]["media-metadata"].length - 1
+                  ].width
+                }
+                height={
+                  data.media[0]["media-metadata"][
+                    data.media[0]["media-metadata"].length - 1
+                  ].height
+                }
               />
               <p>{data.abstract}</p>
             </ModalBody>
