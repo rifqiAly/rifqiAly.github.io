@@ -3,7 +3,7 @@ import { SearchBar, CustomFilter, ArtiCard } from "@/components";
 import { dataProps } from "@/types";
 import { Card, CardBody } from "@nextui-org/react";
 
-const Catalogues = ({ data, isDataEmpty }: dataProps) => {
+const Catalogues = ({ data, isDataEmpty, searchSet, typeSet, periodSet }: dataProps) => {
   return (
     <Card>
       <CardBody>
@@ -13,7 +13,7 @@ const Catalogues = ({ data, isDataEmpty }: dataProps) => {
         </div>
 
         <div className="home__filters">
-          <SearchBar />
+          <SearchBar searchSet={searchSet}/>
           <div className="home__filter-container">
             <CustomFilter
               payload={[
@@ -22,6 +22,7 @@ const Catalogues = ({ data, isDataEmpty }: dataProps) => {
                 { label: "Most Viewed", value: "viewed" },
               ]}
               placeHolder={"type"}
+              typeSet={typeSet}
             />
             <CustomFilter
               payload={[
@@ -30,6 +31,7 @@ const Catalogues = ({ data, isDataEmpty }: dataProps) => {
                 { label: "30 days ago", value: "30" },
               ]}
               placeHolder={"period"}
+              periodSet={periodSet}
             />
           </div>
         </div>

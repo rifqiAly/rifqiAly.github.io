@@ -16,7 +16,7 @@ interface Item {
   label: string;
 }
 
-const CustomFilter = ({ payload, placeHolder }: any) => {
+const CustomFilter = ({ payload, placeHolder, periodSet, typeSet }: any) => {
   const [selectedKeys, setSelectedKeys] = useState(new Set([placeHolder]));
   const selectedValue = useMemo(
     () => Array.from(selectedKeys).join(", ").replaceAll("_", " "),
@@ -44,7 +44,15 @@ const CustomFilter = ({ payload, placeHolder }: any) => {
         items={payload}
         selectedKeys={selectedKeys}
         onSelectionChange={(e: any) => setSelectedKeys(e)}
-        onAction={(key: any) => handleUpdateParam(key)}
+        onAction={(key: any) => {
+          if(placeHolder === 'period'){
+            periodSet(key)
+          }
+          if(placeHolder === 'type'){
+            typeSet(key)
+          }
+          handleUpdateParam(key)
+        }}
       >
         {(item: Item) => (
           <DropdownItem key={item.value}>{item.label}</DropdownItem>

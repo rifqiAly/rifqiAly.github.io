@@ -13,6 +13,9 @@ export interface CustomButtonProps {
 export interface dataProps {
   data: any;
   isDataEmpty: boolean;
+  searchSet: any;
+  typeSet: any;
+  periodSet: any;
 }
 
 export interface anyProps {

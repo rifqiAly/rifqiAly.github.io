@@ -6,7 +6,13 @@ import Owned from "./Owned";
 import Rewards from "./Rewards";
 import { dataProps } from "@/types";
 
-const Section = ({data, isDataEmpty}: dataProps) => {
+const Section = ({
+  data,
+  isDataEmpty,
+  searchSet,
+  typeSet,
+  periodSet,
+}: dataProps) => {
   const [selected, setSelected] = React.useState("catalogues");
   return (
     <div className="mt-12 padding-x padding-y max-width" id="discover">
@@ -17,7 +23,13 @@ const Section = ({data, isDataEmpty}: dataProps) => {
         color="primary"
       >
         <Tab key="catalogues" title="Catalogues">
-          <Catalogues data={data} isDataEmpty={isDataEmpty}/>
+          <Catalogues
+            data={data}
+            isDataEmpty={isDataEmpty}
+            searchSet={searchSet}
+            typeSet={typeSet}
+            periodSet={periodSet}
+          />
         </Tab>
         <Tab key="owned" title="Owned">
           <Owned />

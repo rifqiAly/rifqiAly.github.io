@@ -4,13 +4,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-const SearchBar = () => {
+const SearchBar = ({ searchSet }: any) => {
   const router = useRouter();
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    searchSet(value.toLowerCase());
     updateSearchLocal(value.toLowerCase());
   };
 
