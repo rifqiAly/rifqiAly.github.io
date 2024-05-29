@@ -18,3 +18,11 @@ export interface dataProps {
 export interface anyProps {
   data: any;
 }
+
+export interface detailProps {
+  title: string;
+  byline: string;
+  abstract: string;
+  published_date: string;
+  media: any;
+}

@@ -8,7 +8,6 @@ import { dataProps } from "@/types";
 
 const Section = ({data, isDataEmpty}: dataProps) => {
   const [selected, setSelected] = React.useState("catalogues");
-
   return (
     <div className="mt-12 padding-x padding-y max-width" id="discover">
       <Tabs
