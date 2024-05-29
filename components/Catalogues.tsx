@@ -15,17 +15,31 @@ const Catalogues = ({ data, isDataEmpty }: dataProps) => {
         <div className="home__filters">
           <SearchBar />
           <div className="home__filter-container">
-            <CustomFilter />
-            <CustomFilter />
+            <CustomFilter
+              payload={[
+                { label: "Most Emailed", value: "emailed" },
+                { label: "Most Shared", value: "shared" },
+                { label: "Most Viewed", value: "viewed" },
+              ]}
+              placeHolder={"type"}
+            />
+            <CustomFilter
+              payload={[
+                { label: "1 day ago", value: "1" },
+                { label: "7 days ago", value: "7" },
+                { label: "30 days ago", value: "30" },
+              ]}
+              placeHolder={"period"}
+            />
           </div>
         </div>
 
         {!isDataEmpty ? (
           <section>
             <div className="home__articles-wrapper">
-                {data.map((article: any) => (
-                    <ArtiCard key={article.id} data={article} />
-                ))}
+              {data.map((article: any) => (
+                <ArtiCard key={article.id} data={article} />
+              ))}
             </div>
           </section>
         ) : (
